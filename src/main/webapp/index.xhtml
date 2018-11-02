@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:v="http://java.sun.com/jsf/composite/v"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+>
+<f:view afterPhase="#{profile.welcomeDisplayed}">
+	<v:baseTemplate title="Dashboard">
+		<h1>
+			Dashboard
+		</h1>
+		<p>This web application as of now only registers user to the server. It doesn't do anything else</p>
+
+		<div id="welcome-modal" class="modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Introduction</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body">
+						<p>Welcome to the WoW 3.3.5a private server. This server is powered by TrinityCore MMORPG engine. You are registered in the database. To play the game, download the WoW modified client from: <h:outputLink value="https://www.viperfish.net/WoW.zip">Here</h:outputLink></p>
+						<p>To run the game at optimal configuration, set the screen resolution according to your computer, and turn the graphics settings to maximum. Because WoW 3.3.5a is pretty old, it will not run at full screen successfully on modern hardware. However, you could achieve the same effect using bordered window mode without borders.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<h:outputScript rendered="#{profile.displayWelcome}">
+			$('#welcome-modal').modal('show');
+		</h:outputScript>
+	</v:baseTemplate>
+</f:view>
+</html>

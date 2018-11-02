@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+
+<h:head>
+	<title>WoW Web Login</title>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<!--===============================================================================================-->
+	<link rel="shortcut icon" type="image/x-icon" href="#{resource['images/favicon.ico']}"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="bootstrap/css/bootstrap.min.css"/>
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="#{facesContext.externalContext.requestContextPath}/external-resources/fontawesome-free/css/all.min.css" />
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="fonts" name="Linearicons-Free-v1.0.0/icon-font.min.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="animate/animate.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="css-hamburgers/hamburgers.min.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="animsition/css/animsition.min.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="select2/select2.min.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="vendor" name="daterangepicker/daterangepicker.css"/>
+	<!--===============================================================================================-->
+	<h:outputStylesheet library="css" name="util.css"/>
+	<h:outputStylesheet library="css" name="main.css"/>
+	<!--===============================================================================================-->
+</h:head>
+<h:body>
+
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<form class="login100-form validate-form" method="post" action="j_security_check">
+					<span class="login100-form-title p-b-33">
+						Account Login
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate="Username is required">
+						<input class="input100" type="text" name="j_username"
+						       placeholder="Username"/>
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="wrap-input100 rs1 validate-input"
+					     data-validate="Password is required">
+						<input class="input100" type="password" name="j_password"
+						       placeholder="Password"/>
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="container-login100-form-btn m-t-20">
+						<button type="submit" class="login100-form-btn">
+							Sign in
+						</button>
+					</div>
+
+					<div class="text-center p-t-45 p-b-4">
+						<span class="txt1">
+							Forgot
+						</span>
+						<a href="#" class="txt2 hov1">
+							Username / Password?
+						</a>
+					</div>
+
+					<div class="text-center">
+						<span class="txt1">
+							Create an account?
+						</span>
+
+						<h:link value="Sign up" outcome="/registration"
+						        styleClass="txt2 hov1"></h:link>
+					</div>
+					<h:panelGroup layout="block" rendered="#{loginStatus.loginFailed}" styleClass="alert alert-danger">
+						Username or password is invalid
+					</h:panelGroup>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+	<!--===============================================================================================-->
+	<h:outputScript library="vendor" name="jquery/jquery-3.2.1.min.js"/>
+	<!--===============================================================================================-->
+	<h:outputScript library="vendor" name="animsition/js/animsition.min.js"/>
+	<!--===============================================================================================-->
+	<h:outputScript library="vendor" name="bootstrap/js/popper.js"/>
+	<h:outputScript library="vendor" name="bootstrap/js/bootstrap.min.js"/>
+	<!--===============================================================================================-->
+	<h:outputScript library="vendor" name="select2/select2.min.js"/>
+	<!--===============================================================================================-->
+	<h:outputScript library="js" name="main.js"/>
+
+</h:body>
+</html>
