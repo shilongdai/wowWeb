@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+		"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:v="http://xmlns.jcp.org/jsf/composite/v"
+>
+
+<v:baseTemplate title="Profile">
+	<h1>User Information:</h1>
+	<table class="table table-hover">
+		<tr scope="row">
+			<th>
+				Username:
+			</th>
+			<td>
+				<h:outputText value="#{profile.user.username}"/>
+			</td>
+		</tr>
+		<tr scope="row">
+			<th>
+				Email:
+			</th>
+			<td>
+				<h:outputText value="#{profile.user.email}"/>
+			</td>
+		</tr>
+		<tr scope="row">
+			<th>
+				Join Date:
+			</th>
+			<td>
+				<h:outputText value="#{profile.user.joinDate}">
+					<f:convertDateTime pattern="dd.MM.yyyy HH:mm"/>
+				</h:outputText>
+			</td>
+		</tr>
+		<tr scope="row">
+			<th>
+				Operating System:
+			</th>
+			<td>
+				<h:outputText value="#{profile.user.os}"/>
+			</td>
+		</tr>
+		<tr scope="row">
+			<th>
+				Roles:
+			</th>
+			<td>
+				<ui:repeat value="#{profile.user.roles}" var="r">
+					<h:outputText value="#{r.rolename}"/>&nbsp;
+				</ui:repeat>
+			</td>
+		</tr>
+	</table>
+	<h:link styleClass="btn btn-primary" outcome="/index" value="Back"/>
+</v:baseTemplate>
+</html>

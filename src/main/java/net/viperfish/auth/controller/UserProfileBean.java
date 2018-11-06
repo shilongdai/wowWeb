@@ -38,6 +38,22 @@ public class UserProfileBean implements Serializable {
 		return user;
 	}
 
+	public String getPassword() {
+		return "";
+	}
+
+	public void setPassword(String password) {
+		try {
+			if (password.isEmpty()) {
+				FacesUtils.sendRedirect("user/userProfile.xhtml");
+				return;
+			}
+			this.userManager.updatePassword(user.getId(), password);
+		} catch (IOException e) {
+			logger.warn("Failed to redirect user to userProfile.xhtml");
+		}
+	}
+
 	public void logout() {
 		try {
 			FacesUtils.getRequest().logout();
